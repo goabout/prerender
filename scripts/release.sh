@@ -27,14 +27,14 @@ stage=`echo "$stage" | sed -e 's#^.*/##' | tr '.-' '_'`
 
 gitrev=`git rev-parse HEAD`
 
-docker build --pull --tag=goabout/goabout-nodejs-helper:$gitrev .
-docker tag goabout/goabout-nodejs-helper:$gitrev goabout/goabout-nodejs-helper:$stage
+docker build --pull --tag=goabout/prerender:$gitrev .
+docker tag goabout/prerender:$gitrev goabout/prerender:$stage
 if [ "$stage" = "master" ]; then
-  docker tag goabout/goabout-nodejs-helper:$gitrev goabout/goabout-nodejs-helper
+  docker tag goabout/prerender:$gitrev goabout/prerender
 fi
 
-docker push goabout/goabout-nodejs-helper:$gitrev
-docker push goabout/goabout-nodejs-helper:$stage
+docker push goabout/prerender:$gitrev
+docker push goabout/prerender:$stage
 if [ "$stage" = "master" ]; then
-  docker push goabout/goabout-nodejs-helper
+  docker push goabout/prerender
 fi

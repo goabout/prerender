@@ -5,5 +5,5 @@ set -e
 dirname=`dirname "$0"`
 cd "$dirname/.."
 echo "PHASE: Test..."
+echo "No tests present"
 
-node_modules/.bin/jasmine-node app.js spec/
