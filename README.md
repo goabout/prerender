@@ -288,6 +288,17 @@ Each plugin can implement any of the plugin methods:
 
 You can enable the plugins in `server.js` by uncommenting the corresponding lines.
 
+### Bearer Token auth
+
+If you want to only allow access to your Prerender server from authorized parties, enable the Bearer token.
+
+You will need to add the `TOKEN` environment variable.
+```
+export TOKEN=123abc
+```
+
+Then make sure to pass the token into authentication headers.
+
 ### basicAuth
 
 If you want to only allow access to your Prerender server from authorized parties, enable the basic auth plugin.
